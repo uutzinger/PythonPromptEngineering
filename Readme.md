@@ -43,7 +43,8 @@ else:
 
 3) Ask your AI agent to blur the grayscale image and display it.
 
-![Example Ships](./Ship_Images.png){width=300px}
+ <a href="./Ship_Images.png" target="_blank"> <img src="./Ship_Images.png" width="600"> </a> 
+
 
 4) Ask your AI agent to apply an edge detection algorithm to the blurred image and display it.
 
@@ -51,7 +52,7 @@ else:
 
 6) Ask your AI agent what an affine transformation is what different types of transformations there are besides rotation.
 
-![Example Ships](./Ship_Images_Rotated.png){width=300px}
+<a href="./Ship_Images_Rotated.png" target="_blank"> <img src="./Ship_Images_Rotated.png" width="600"> </a>
 
 ### Count Objects
 
@@ -65,7 +66,7 @@ else:
 
 5) Ask it if there are other methods one could use to separate the contours, for example based on shape.
 
-![Example Cards](./Example_Cards.png){width=300px}
+<a href="./Example_Cards.png" target="_blank"> <img src="./Example_Cards.png" width="600"> </a>
 
 ### Object Detection
 
@@ -150,47 +151,47 @@ capture_thread.join()
 
 ```
 
-![Example Camera](./Camera_ok.png){width=300px}
+<a href="./Camera_ok.png" target="_blank"> <img src="./Camera_ok.png" width="300"> </a>
 
 
 3) Ask it to help you obtain neural network models from https://github.com/opencv/opencv_zoo.  
 
 4) Ask it to use the previous program to capture video and to include code to load the facce detecct model  and apply to each frame and then to draw the bounding box and land marks on the image. You will not find the appropriate model or ask the AI agent to search the answer on the model zoo website. Since these models are fairly new the AI agent likely does not know exactly how to use them. Once you know the model you can find the example code from the website (e.g. demo.py). You can either upload the example code or paste it together with your question. I asked it to look at the code and include it to provide solution.
 
-![Example Hands](./Camera_Face.png){width=300px}
+<a href="./Camera_Face.png" target="_blank"> <img src="./Camera_Face.png" width="300"> </a>
 
 5) Ask the AI agent what good model would be for hand and finger detection from the same model zoo. Then find it in the downloaded opencv_zoo.
 
 6) Use the demo and other python program and ask the AI agent to incorporate in the previous program replacing the face detection section.
 
-![Example Hands](./Hands.png){ width=300px }
+<a href="./Hands.png" target="_blank"> <img src="./Hands.png" width="600"> </a>
 
 7) In some of the lecture notes the instructor shows YOLO on James Bond movie. The opencv zoo has YOLOX. Ask that your program recognizes simple objects such as the ones in a YOLO algorithm.
 
-![Example Hands](./Example_Yolox.png){width=300px}
+<a href="./Example_Yolox.png" target="_blank"> <img src="./Example_Yolox.png" width="600"> </a>
 
 ## Audio Processing
 
 1) Ask you AI agent to create a sin wave at 1000Hz, display it in a graph with matlplot lib and play it over the speakers of your computer. It's possible you need to tell it what computer you are using so that it can use the appropriate library for audio playback.
 
-![Example Hands](./Example_Sinewave.png){ width=300px }
+<a href="./Example_Sinewave.png" target="_blank"> <img src="./Example_Sinewave.png" width="600"> </a>{ width=300px }
 
 2) Ask it to plot the power spectrum of your signal and to use logarithmic scale on the y axis.
 
-![Example Hands](./Example_Power.png){ width=300px }
+<a href="./Example_Power.png" target="_blank"> <img src="./Example_Power.png" width="600"> </a>{ width=300px }
 
 
 3) Often we have noise from the power lines in the audio. That noise is at 60Hz. You can ask your AI agent to add a noise sinewave at 60Hz and make its amplitude 1/3 of the main frequency.
 
-![Example Noise](./Example_NoiseandSine.png){style="width=300px;"}
-![Example Noise Power](./Example_PowerNoise.png){style="width=300px;"}
+<a href="./Example_NoiseandSine.png" target="_blank"> <img src="./Example_NoiseandSine.png" width="600"> </a>
 
+<a href="./Example_PowerNoise.png" target="_blank"> <img src="./Example_PowerNoise.png" width="600"> </a>
 
 4) Now we want to create a filer on the audio signal that suppresses the signal at 60Hz but leaves the other signal intact. Often this is called a notch filter at 60Hz.
 
 
-![Example Noise](./time_domain_plot_filter.png){style="width=300px;"}
-![Example Noise Power](./power_spectrum_filter.png){style="width=300px;"}
+<a href="./time_domain_plot_filter.png" target="_blank"> <img src="./time_domain_plot_filter.png" width="600"> </a>
+<a href="./power_spectrum_filter.png" target="_blank"> <img src="./power_spectrum_filter.png" width="600"> </a>
 
 5) Lets try this in realtime. That can be difficult with python because often its not used as realtime processing tool. ChatGPT suggest that I use pyqtgraph to display the signal and the spectrum. I want to record the audio in realtime, filter it and display the signal as well as the filtered power spectrum. Since I use pyqtgraph it likely will also will want to use pyqt.
 
@@ -212,9 +213,9 @@ sd.play(tone, samplerate=fs)
 sd.wait()
 ```
 
-![Example Noise](./Audio_realtime_1000.png){style="width=300px;"}
+<a href="./Audio_realtime_1000.png" target="_blank"> <img src="./Audio_realtime_1000.png" width="600"> </a>
 
-![Example Noise Power](./Audio_realtime_2000.png){style="width=300px;"}
+<a href="./Audio_realtime_2000.png" target="_blank"> <img src="./Audio_realtime_2000.png" width="600"> </a>
 
 
 ## Reading and Processing Data Files
