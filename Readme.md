@@ -201,7 +201,7 @@ I like these plots and they look very similar to what Matlab does when you plot 
 
 <a href="./time_domain_plot.png" target="_blank"> <img src="./time_domain_plot.png" width="600"> </a>
 
-<a href="./power_spectrum.png" target="_blank"> <img src="./power_spectrum.png.png" width="600"> </a>
+<a href="./power_spectrum.png" target="_blank"> <img src="./power_spectrum.png" width="600"> </a>
 
 This looks as expected.
 
