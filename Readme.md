@@ -158,7 +158,7 @@ capture_thread.join()
 
 ```
 
-The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this sequentially you would not wasting the time when the image is transferring to your computer. This way images arrive continuously and the display is also continuously.
+The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this sequentially you would waste time when the image is transferred to your computer as it would wait until its finished transferring. Here it checks if a new image is in the queue and takes it and displays it while the image reading program is already reading the next image. This way images arrive continuously and the display is also continuously. This will become more important when you also process your images.
 
 <a href="./Camera_ok.png" target="_blank"> <img src="./Camera_ok.png" width="300"> </a>
 
