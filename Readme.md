@@ -4,14 +4,14 @@ We will create computer code with AI agent. For the solutions I used [ChatGPT](h
 ***This is new self paced homework. I do not know how difficult it will be for you. Feedback is welcome.***
 
 - [Prompt Engineering](#prompt-engineering)
-  * [Image and Video Processing](#image-and-video-processing)
-    + [Load and Manipulate Images](#load-and-manipulate-images)
-    + [Count Objects](#count-objects)
-    + [Object Detection](#object-detection)
-  * [Audio Processing](#audio-processing)
-  * [Reading and Processing Data](#reading-and-processing-data)
-    + [Ask AI agent to Analyze Data](#ask-ai-agent-to-analyze-data)
-    + [Load and Analyze Data Files](#load-and-analyze-data-files)
+  - [Image and Video Processing](#image-and-video-processing)
+    - [Load and Manipulate Images](#load-and-manipulate-images)
+    - [Count Objects](#count-objects)
+    - [Object Detection](#object-detection)
+  - [Audio Processing](#audio-processing)
+  - [Reading and Processing Data](#reading-and-processing-data)
+    - [Ask AI agent to Analyze Data](#ask-ai-agent-to-analyze-data)
+    - [Load and Analyze Data Files](#load-and-analyze-data-files)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -65,7 +65,7 @@ else:
 
 1) Ask your AI agent to load the cards.jpg image and display it.
 
-2) Now ask it to blur it and then perform edge detection with the purpose to find contours in the edges. Ask it to display each contour on top of the original image.
+2) Now ask it to blur it and then perform edge detection with the purpose to find contours. Ask it to display each contour on top of the original image.
 
 3) Ask your agent how contour detection works.
 
@@ -79,9 +79,9 @@ else:
 
 1) Ask your AI agent to create a python program that opens the camera, obtains an image and displays it. Specify that you want to obtain each image separately before displaying it.
 
-2) Ask your AI agent to continuously grab an image and put them into a *first in - first out* buffer (FIFO). In a separate thread you will want to grab an image from the buffer and display it. Ask that it creates a frames per second measurement and displays the number to the bottom left of the image.
+2) Ask your AI agent to continuously grab an image and put it into a *first in - first out* buffer (FIFO). In a separate thread you will want to grab an image from the buffer and display it. Ask that it creates a frames per second measurement and displays the number to the bottom left of the image.
 
-Mine looks like that:
+My program looks like this:
 
 ```python
 import cv2
@@ -158,14 +158,14 @@ capture_thread.join()
 
 ```
 
-The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this sequentially you would waste time when the image is transferred to your computer as it would wait until its finished transferring. Here it checks if a new image is in the queue and takes it and displays it while the image reading program is already reading the next image. This way images arrive continuously and the display is also continuously. This will become more important when you also process your images.
+The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this code sequentially you would waste time when the image is transferred to your computer as it would wait until its finished transferring before displaying images. Here it checks if a new image is in the queue and displays it while the image reading program is already reading the next image. This way images arrive continuously and the display is also continuous. This will become more important when you also process your images.
 
 <a href="./Camera_ok.png" target="_blank"> <img src="./Camera_ok.png" width="300"> </a>
 
 
 3) Ask it to help you obtain neural network models from https://github.com/opencv/opencv_zoo.  You want a copy of the zoo on your computer. Its called a zoo because it has several "animals" in the package.
 
-**Now decode which of the following 3 examples you want to do**:
+**Now decide which of the following 3 examples you want to do**:
 
 4) Ask it to use the previous program to capture video and to include code to load the face detection model and apply it to each frame and then draw the bounding box and land marks on the image. You will need to find the appropriate model or ask the AI agent to search the answer on the model zoo website. Not all AI agents can search a website. Since these models are fairly new the AI agent likely does not know exactly how to use them. Once you know the model, you can find the example code from the website. You can either upload the example code or paste it together with your question into the AI agent. I asked it to look at the code and include it to provide the solution. Your solution does not need to look like mine.
 
@@ -183,7 +183,7 @@ This is very interesting as it now shows all the hand and finger segments. You c
 
 <a href="./Example_Yolox.png" target="_blank"> <img src="./Example_Yolox.png" width="600"> </a>
 
-Its working quite well but is slow. It takes my wallet as a phone. I bet if opencv would use the cuda extension (NVIDEA graphics cards) it would be faster. But for that, you need to build/compile opencv and it will take quite some time. So lets not do that.
+Its working quite well but is slow. It thinks my wallet as a phone. I bet if opencv would use the cuda extension (NVIDIA graphics card) it would be faster. But for that, you need to build/compile opencv and it will take quite some time. So lets not do that.
 
 ## Audio Processing
 
@@ -213,7 +213,7 @@ This looks as expected.
 
 **This is optional part and will give you extra credit**
 
-5) Lets try this in realtime. That can be difficult with python because Python is not a high performance programming language. ChatGPT suggests that I use pyqtgraph to display the signal and the spectrum. I told it that I want to record the audio in realtime, filter it and display the signal as well as the filtered power spectrum. Since I use pyqtgraph it likely will also want to use *Qt* which can be used to create a user interface. You AI agent can tell you how to install it. 
+5) Lets try this in realtime. That can be difficult with python because Python is not a high performance programming language. ChatGPT suggests that I use pyqtgraph to display the signal and the spectrum. I told it that I want to record the audio in realtime, filter it and display the signal as well as the filtered power spectrum. Since I use pyqtgraph it likely will also want to use *Qt* which can be used to create a user interface. Your AI agent can tell you how to install it. 
 
 I changed the notch frequency to 2000Hz and I whistled. I can observe that the power spectrum is reduced when I hit that frequency. You can create the tone with an other python program which you can run simultaneously. Visual Studio Code will ask you if you really want to run two programs:
 
@@ -240,7 +240,7 @@ If these signals look strange to you, BME330 will talk about it again. Also any 
 
 ## Reading and Processing Data
 
-**We have two sections. One where we send data to a server to process it and one where we obtain a file and plot some of the data. You can do both or choose one.**
+**We have two sections below. One where we send data to a server to process it and one where we obtain a file and plot some of the data. You can do both or choose one.**
 
 ### Ask AI agent to Analyze Data
 
