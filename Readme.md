@@ -1,7 +1,7 @@
 # Prompt Engineering
 We will create computer code with AI agent. For the solutions I used [ChatGPT](https://chatgpt.com/). But other agents such as [DeepSeek](https://www.deepseek.com/) or [Claude](https://claude.ai/) will work too.
 
-***This is new self paced homework. I do not know how difficult it will be for you. Feedback is welcome.***
+***This is self paced homework.***
 
 - [Prompt Engineering](#prompt-engineering)
   - [Image and Video Processing](#image-and-video-processing)
