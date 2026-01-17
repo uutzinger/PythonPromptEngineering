@@ -163,8 +163,8 @@ The advantage of this code is that you run two programs and don't need to wait u
 <a href="./Camera_ok.png" target="_blank"> <img src="./Camera_ok.png" width="300"> </a>
 
 
-3) Ask it to help you obtain neural network models from https://github.com/opencv/opencv_zoo.  You want a copy of the zoo on your computer. Its called a zoo because it has several "animals" in the package.
-
+3) Ask it to help you obtain neural network models from opencv_zoo. You want a copy of the zoo on your computer. Its called a zoo because it has several "animals" in the package. The opencv_zoo on github now says that the models are hosted now on HuggingFace. If you go to https://huggingface.co/ytfeng/opencv_zoo it will show how to obtain the folder from HuggingFace.
+   
 **Now decide which of the following 3 examples you want to do**:
 
 4) Ask it to use the previous program to capture video and to include code to load the face detection model and apply it to each frame and then draw the bounding box and land marks on the image. You will need to find the appropriate model or ask the AI agent to search the answer on the model zoo website. Not all AI agents can search a website. Since these models are fairly new the AI agent likely does not know exactly how to use them. Once you know the model, you can find the example code from the website. You can either upload the example code or paste it together with your question into the AI agent. I asked it to look at the code and include it to provide the solution. Your solution does not need to look like mine.
