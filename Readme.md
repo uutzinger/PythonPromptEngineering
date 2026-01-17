@@ -77,6 +77,8 @@ else:
 
 ### Object Detection
 
+Lets first perpare a program to read images from your web camera.
+
 1) Ask your AI agent to create a python program that opens the camera, obtains an image and displays it. Specify that you want to obtain each image separately before displaying it.
 
 2) Ask your AI agent to continuously grab an image and put it into a *first in - first out* buffer (FIFO). In a separate thread you will want to grab an image from the buffer and display it. Ask that it creates a frames per second measurement and displays the number to the bottom left of the image.
@@ -158,14 +160,15 @@ capture_thread.join()
 
 ```
 
-The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this code sequentially you would waste time when the image is transferred to your computer as it would wait until its finished transferring before displaying images. Here it checks if a new image is in the queue and displays it while the image reading program is already reading the next image. This way images arrive continuously and the display is also continuous. This will become more important when you also process your images.
+The advantage of this code is that you run two programs and don't need to wait until one program is finished. If you were to run this code sequentially you would waste time when the image is transferred to your computer as the program needs to wait until it finished transferring before displaying images. Here it checks if a new image is in the queue and displays it while the image reading program is already reading the next image. This way images arrive continuously and the display is also continuous. This will become more important when you also process your images because waiting until processing if finished would take even longer.
 
 <a href="./Camera_ok.png" target="_blank"> <img src="./Camera_ok.png" width="300"> </a>
 
-
-3) Ask it to help you obtain neural network models from opencv_zoo. You want a copy of the zoo on your computer. Its called a zoo because it has several "animals" in the package. The opencv_zoo on github now says that the models are hosted now on HuggingFace. If you go to https://huggingface.co/ytfeng/opencv_zoo it will show how to obtain the folder from HuggingFace.
+3) Ask it to help you obtain neural network models from opencv_zoo. You want a copy of the zoo on your computer. Its called a zoo because it has several "animals" in the package. opencv_zoo on github now says that the models are hosted on HuggingFace. If you go to https://huggingface.co/ytfeng/opencv_zoo it will show how to obtain the folder from HuggingFace instead. The issue with hosting large files on github is that github will impose a limit of how much data can be downloaded from a repository.
    
 **Now decide which of the following 3 examples you want to do**:
+
+You complete either 4, 5 or 6.
 
 4) Ask it to use the previous program to capture video and to include code to load the face detection model and apply it to each frame and then draw the bounding box and land marks on the image. You will need to find the appropriate model or ask the AI agent to search the answer on the model zoo website. Not all AI agents can search a website. Since these models are fairly new the AI agent likely does not know exactly how to use them. Once you know the model, you can find the example code from the website. You can either upload the example code or paste it together with your question into the AI agent. I asked it to look at the code and include it to provide the solution. Your solution does not need to look like mine.
 
@@ -179,7 +182,7 @@ You can see that it found my pupils, nose and edge of mouth and its 90% confiden
 
 This is very interesting as it now shows all the hand and finger segments. You could decode it for sign language or do some simple gesture analysis but we dont do that now.
 
-7) In some of the lecture notes the instructor shows YOLO on a James Bond movie. The opencv zoo has YOLOX. Ask that your program recognizes simple objects such as the ones in a YOLO algorithm. You likely will need to give the AI agent the example code. You can just include it with your question. I have the example programs in in `opencv_zoo/models/object_detection_yolox`.
+6) In some of the lecture notes the instructor shows YOLO on a James Bond movie. The opencv zoo has YOLOX. Ask that your program recognizes simple objects such as the ones in a YOLO algorithm. You likely will need to give the AI agent the example code. You can just include it with your question. I have the example programs in in `opencv_zoo/models/object_detection_yolox`.
 
 <a href="./Example_Yolox.png" target="_blank"> <img src="./Example_Yolox.png" width="600"> </a>
 
@@ -187,11 +190,11 @@ Its working quite well but is slow. It thinks my wallet as a phone. I bet if ope
 
 ## Audio Processing
 
-1) Ask your AI agent to create a sin wave at 1000Hz, display it in a graph with matplotlib and play it over the speakers of your computer. It's possible you need to tell it what computer you are using so that it can use the appropriate library for audio playback.
+1) Ask your AI agent to create a sin wave at 1000Hz, display it in a graph with matplotlib and play it over the speakers of your computer. It's possible you need to tell it what computer you are using so that it can use the appropriate library for audio playback. For Windows it would be wave and you already have that package installed. Wave does not install on Mac and AI will help you select the right one.
 
 <a href="./Example_Sinewave.png" target="_blank"> <img src="./Example_Sinewave.png" width="600"> </a>
 
-2) Ask it to plot the power spectrum of your signal and to use logarithmic scale on the y axis so it displays deciBel. I sometimes need to look up the definition for dB. If you don't know it perhaps you want to ask what its used for.
+2) Ask it to plot the power spectrum of your signal and to use logarithmic scale on the y axis so it displays deci Bel (dB). I sometimes need to look up the definition for dB. If you don't know it, perhaps you want to ask what its used for.
 
 <a href="./Example_Power.png" target="_blank"> <img src="./Example_Power.png" width="600"> </a>
 
@@ -210,6 +213,7 @@ This looks as expected.
 <a href="./time_domain_plot_filter.png" target="_blank"> <img src="./time_domain_plot_filter.png" width="600"> </a>
 <a href="./power_spectrum_filter.png" target="_blank"> <img src="./power_spectrum_filter.png" width="600"> </a>
 
+You can see that the signal at 60Hz is at lower intensity, but its still present.
 
 **This is optional part and will give you extra credit**
 
@@ -236,19 +240,20 @@ sd.wait()
 
 <a href="./Audio_realtime_2000.png" target="_blank"> <img src="./Audio_realtime_2000.png" width="600"> </a>
 
-If these signals look strange to you, BME330 will talk about it again. Also any Engineering Analysis match course might discuss it. There are also classes in ECE on signal processing. Its really astonishing how simple it is these days to ask for demo programs or explanation how something works.
+If these signals look strange to you, BME330 will talk about it again. Also any Engineering Analysis course might discuss it. There are also classes in ECE on signal processing. Its really astonishing how simple it is these days to ask for demo programs or explanation how something works.
 
 ## Reading and Processing Data
 
 **We have two sections below. One where we send data to a server to process it and one where we obtain a file and plot some of the data. You can do both or choose one.**
+The option to read email requires an account with OpenAI and costs a couple cents.
 
 ### Ask AI agent to Analyze Data
 
-1) We want ChatGPT to read my emails and summarize them. I tested this on my personal gmail account. It does not work with coperate email such as Catmail nor Office365 as my employer blocks App passwords. Since I have two factor authentication enabled, I had to create an application password instead of using my regular google password. For gmail I went to https://myaccount.google.com/security and clicked on 2-step verification created an app password at the bottom. This worked better when I googled how to do it. I also created an account at openai platform and put a small amount of money into my account https://platform.openai.com/signup/ then I created an OpenAI API Key (Application Interface). This allows you to use OpenAI from a program over the internet without posting in a web browser. 
+1) I want ChatGPT to read my emails and summarize them. I tested this on my personal gmail account. It does not work with coperate email such as Catmail nor Office365 as my employer blocks App passwords. Since I have two factor authentication enabled, I had to create an application password instead of using my regular google password. For gmail I went to https://myaccount.google.com/security and clicked on 2-step verification created an app password at the bottom. I had to google how to do it. I also created an account at OpenAi platform and put a small amount of money into my account https://platform.openai.com/signup/ then I created an OpenAI API Key (Application Interface). This allows you to use OpenAI from a thirt party program over the internet without posting in a web browser. 
 
-You should ask your AI agent that you want to read your email in batches of 50 emails but only from the last 2 days and extract the text and have it summarized by OpeanAI. The AI agent tried to be smart and only read some subsections of the emails which did not work, so you should ask it to simply read the email using (RFC822).
+You should ask your AI agent that you want to read your email in batches of 50 emails but only from the last 2 days and extract the text and have it summarized by OpeanAI. The AI agent tried to be smart and only read some subsections of the emails which did not work, so I asked it to simply read the email using (RFC822).
 
-The code this creates is a few months behind and will not work right away. OpenAI changed slightly how to use its API. Also it has now different models: I would use the model "gpt-4o-mini" as that was the least expensive. If the errors the program makes you can post back to the AI agent and it might be able to fix it. Otherwise you can check on Google. After summarizing a few emails I still only have used 1 cents in my account.
+The code this creates is a few months behind and will not work right away. OpenAI changed slightly how to use its API. Also it has now different models: I used the model "gpt-4o-mini" as that was the least expensive. The errors the program makes, you can post back to the AI agent and it might be able to fix it. Otherwise you can check on Google. After summarizing a few emails I still only have used 1 cents in my account.
 
 You can imagine that with text to speech you could also have your program read the email or summary to you. But we dont do that here.
 
@@ -256,20 +261,23 @@ You can imagine that with text to speech you could also have your program read t
 
 ### Load and Analyze Data Files
 
-We are going to use the Pima Indians Diabetes Database to analyze health data. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database) Its a comma separated vlues text file (CSV). But using pandas you can obtain it directly from internet.
+We are going to use the Pima Indians Diabetes Database to analyze health data. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database) Its a comma separated values text file (CSV). Using pandas you can obtain it directly from internet.
 
-2) Ask your AI agent to obtain the dataset from Github and plot histogram. You can see that some histograms have quite a few values at 0. These are missing data points and should be excluded from the plots. In my first attempt ChatGPT replaced them with Median and I told it not to do that and just replace the Zeroes with NaNs (Not a Number) and repeat the plots.
+2) Ask your AI agent to obtain the dataset from Github and plot histogram. You can see that some histograms have quite a few values at 0. These are missing data points and should be excluded from the plots. You can not have BMI of 0. In my first attempt ChatGPT replaced them with Median and I told it not to do that and just replace the Zeroes with NaNs (Not a Number) and repeat the plots.
 
 <a href="./DataSummary.png" target="_blank"> <img src="./DataSummary.png" width="600"> </a>
 
+Not cleaned up.
+
 <a href="./Cleanup.png" target="_blank"> <img src="./Cleanup.png" width="600"> </a>
+
+Cleaned up.
 
 3) Now we would like to see if there are difference between outcomes (having diabetes versus not having diabetes). You can ask to make a bar graph with the mean values for the two outcome groups. You can see that some values seem to be larger in the outcome group. In other classes you will learn how to enhance such plot with error bars or whiskers to better illustrate if the separation is significant.
 
 <a href="./MeanComparison.png" target="_blank"> <img src="./MeanComparison.png" width="600"> </a>
 
-4) And finally we would like to compute the correlations. My AI agent asked me to install seaborn for that. And it created a heatmap showing correlations. Strong correlation is between 0.7 and 0.9, moderate 0.4 and 0.7 and weak between 0.2 and 0.4. There are other courses where calculation of correlation coefficient is explained.
-
+4) And finally we would like to compute the correlations. My AI agent asked me to install seaborn for that. And it created a heatmap showing correlations. Strong correlation is between 0.7 and 0.9, moderate 0.4 and 0.7 and weak between 0.2 and 0.4. There are other BME courses where calculation of correlation coefficient is explained.
 
 <a href="./Correlation.png" target="_blank"> <img src="./Correlation.png" width="600"> </a>
 
@@ -283,4 +291,4 @@ ChatGPT says that
 | Glucose	| BMI	    | Weak to moderate correlation (Obesity can affect blood sugar levels)
 | BloodPressure	| Glucose | 	Weak correlation (Blood pressure and glucose are related but not strongly)
 
-But numbers don't quite match.
+But I am not sure where it took these conclusions from because the numbers and levels dont quite match.
