@@ -1,26 +1,27 @@
 # Prompt Engineering
-We will create computer code with AI agent. For the solutions I used [ChatGPT](https://chatgpt.com/). But other agents such as [DeepSeek](https://www.deepseek.com/) or [Claude](https://claude.ai/) will work too.
+We will create computer code with AI agent. For the solutions I used [ChatGPT](https://chatgpt.com/). But other agents such as [DeepSeek](https://www.deepseek.com/) or [Claude](https://claude.ai/) will work too. You can also attempt using Visual Studio Code Chat feature or enable extension such as Github Copilot or OpenAI Codex to help with the code.
 
 ***This is self paced homework.***
 
 - [Prompt Engineering](#prompt-engineering)
-  - [Image and Video Processing](#image-and-video-processing)
-    - [Load and Manipulate Images](#load-and-manipulate-images)
-    - [Count Objects](#count-objects)
-    - [Object Detection](#object-detection)
-  - [Audio Processing](#audio-processing)
-  - [Reading and Processing Data](#reading-and-processing-data)
+  - [Image and Video Processing (required)](#image-and-video-processing-required)
+    - [Load and Manipulate Images (required)](#load-and-manipulate-images-required)
+    - [Count Objects (required)](#count-objects-required)
+    - [Object Detection (select one)](#object-detection-select-one)
+  - [Audio Processing (offline version required)](#audio-processing-offline-version-required)
+  - [Reading and Processing Data (select one)](#reading-and-processing-data-select-one)
     - [Ask AI agent to Analyze Data](#ask-ai-agent-to-analyze-data)
     - [Load and Analyze Data Files](#load-and-analyze-data-files)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+
 Created by Urs Utzinger January 2025 with inspiration from [Python for Engineers](https://new.pythonforengineers.com)
 
 Solutions are included but the goal is to create them by yourself.
 
-## Image and Video Processing
-### Load and Manipulate Images
+## Image and Video Processing (required)
+### Load and Manipulate Images (required)
 
 1) Ask your AI agent to load the image.jpg and display it using **opencv**.
 
@@ -61,7 +62,7 @@ else:
 
 <a href="./Ship_Images_Rotated.png" target="_blank"> <img src="./Ship_Images_Rotated.png" width="600"> </a>
 
-### Count Objects
+### Count Objects (required)
 
 1) Ask your AI agent to load the cards.jpg image and display it.
 
@@ -75,7 +76,7 @@ else:
 
 <a href="./Example_Cards.png" target="_blank"> <img src="./Example_Cards.png" width="600"> </a>
 
-### Object Detection
+### Object Detection (select one)
 
 Lets first perpare a program to read images from your web camera.
 
@@ -188,7 +189,7 @@ This is very interesting as it now shows all the hand and finger segments. You c
 
 Its working quite well but is slow. It thinks my wallet as a phone. I bet if opencv would use the cuda extension (NVIDIA graphics card) it would be faster. But for that, you need to build/compile opencv and it will take quite some time. So lets not do that.
 
-## Audio Processing
+## Audio Processing (offline version required)
 
 1) Ask your AI agent to create a sin wave at 1000Hz, display it in a graph with matplotlib and play it over the speakers of your computer. It's possible you need to tell it what computer you are using so that it can use the appropriate library for audio playback. For Windows it would be wave and you already have that package installed. Wave does not install on Mac and AI will help you select the right one.
 
@@ -242,7 +243,7 @@ sd.wait()
 
 If these signals look strange to you, BME330 will talk about it again. Also any Engineering Analysis course might discuss it. There are also classes in ECE on signal processing. Its really astonishing how simple it is these days to ask for demo programs or explanation how something works.
 
-## Reading and Processing Data
+## Reading and Processing Data (select one)
 
 **We have two sections below. One where we send data to a server to process it and one where we obtain a file and plot some of the data. You can do both or choose one.**
 The option to read email requires an account with OpenAI and costs a couple cents.

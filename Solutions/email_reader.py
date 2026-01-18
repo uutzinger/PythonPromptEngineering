@@ -1,6 +1,6 @@
 import imaplib
 import email
-import openai
+import openai # need to be installed via pip
 from email.header import decode_header
 from datetime import datetime, timedelta
 import re
